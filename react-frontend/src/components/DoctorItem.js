@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 function DoctorItem(props) {
     
   //Destructuring
-  const {id, provider_full_name, specialty} = props.doctor;
+  const {id} = props.doctor;
 
   return (
       <div style={ doctorItem }>
           <p>
-              { props.doctor.provider_full_name }
+              { props.doctor.provider_full_name +  " - " + props.doctor.specialty }
               <button style={buttonStyle} onClick={ props.setAppointment.bind(this, id) }>Schedule Appointment</button>
           </p>
       </div>
@@ -22,6 +22,8 @@ const doctorItem = {
     borderBottom: '1px #ccc dotted'
 }
 
+
+//Styes
 const buttonStyle = {
     background: '#FFF',
     color: '#000',
